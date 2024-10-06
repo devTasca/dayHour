@@ -24,7 +24,7 @@ function load(){
         document.body.style.backgroundColor = '#102128'
         msg.innerHTML += ' da Noite'
     } else {
-        img.src = 'Dawn.png'
+        img.src = 'dawn.png'
         document.body.style.backgroundColor = '#121D26'
         msg.innerHTML += ' da Madrugada'
     }
