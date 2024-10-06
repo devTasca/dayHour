@@ -1,4 +1,7 @@
-window.addEventListener('load', load);
+window.addEventListener('load', () => {
+    load(); // Chama a função imediatamente ao carregar
+    setInterval(load, 1000); // Atualiza a cada segundo
+});
 
 function load(){
     let msg = document.getElementById('msg');
@@ -6,10 +9,13 @@ function load(){
     let now = new Date();
     let hour = now.getHours();
     let minutes = now.getMinutes();
+    let seconds = now.getSeconds();
+    let formattedMinutes = minutes < 10 ? '0' + minutes : minutes;
+    let formattedSeconds = seconds < 10 ? '0' + seconds : seconds;
     // TESTE -----------------------------------
     //let hour = 0
-
-    msg.innerHTML = `Hora do dia: <strong>${hour}:${minutes}</strong>`
+    
+    msg.innerHTML = `Hora do dia: <strong>${hour}:${formattedMinutes}:${formattedSeconds}</strong>`;
 
     if (hour >= 6 && hour < 12) {
         img.src = 'morning.png'
@@ -29,3 +35,5 @@ function load(){
         msg.innerHTML += ' da Madrugada'
     }
 }
+
+setInterval(load, 60000);
