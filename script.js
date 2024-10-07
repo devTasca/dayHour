@@ -35,5 +35,3 @@ function load(){
         msg.innerHTML += ' da Madrugada'
     }
 }
-
-setInterval(load, 60000);
